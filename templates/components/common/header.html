@@ -1,30 +1,69 @@
-{{#if banners.top}}
-<div class="banners" data-banner-location="top">
-    <div class="banner">
-        {{{limit banners.top 1}}}
-    </div>
-</div>
-{{/if}}
-<header class="header" role="banner">
-    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
-        <span class="mobileMenu-toggleIcon">Toggle menu</span>
-    </a>
+<header>
+    <div class="container">
+        <h1 class="brand"><a href="/">{{settings.store_name}}</a></h1>
+        <div class="mobile-header pull-right ">
+            <div class="border-right header-search inline-block">
+                <form action="{{urls.search}}">
+                    <label for="" class="input-groups">
+                        <input type="text" name="search_query" placeholder="" maxlength="100">
+                        <span class="btn-append"><button class="btn btn-gray">Go</button></span>
+                    </label>
+                </form>
+            </div>
+            <div class="mobile-account border-right inline-block">
+                <aside class="units-row header-padding" id="account-header">
 
-    {{> components/common/navigation}}
+                    <div class="pull-right text-right">
 
-    {{#if template_file '===' 'pages/home'}}
-        <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
-        </h1>
-    {{else}}
-        <div class="header-logo header-logo--{{theme_settings.logo-position}}">
-            {{> components/common/store-logo}}
+                        {{#if customer}}
+                            <h3><a href="">My Account</a></h3>
+                            <p class="small">
+                                <a href="{{urls.account.index}}" id="sign-in">{{lang 'common.account'}}</a>
+                                /
+                                <a href="{{urls.auth.logout}}" id="register">{{lang 'common.logout'}}</a>
+                            </p>
+                        {{else}}
+                            <h3>My Account</h3>
+                            <p class="small">
+                                <a href="{{urls.auth.login}}" id="sign-in">{{lang 'common.login'}}</a>
+                                /
+                                {{#if settings.account_creation_enabled}}
+                                    <a href="{{urls.auth.create_account}}" id="register">{{lang 'common.sign_up'}}</a>
+                                {{/if}}
+                            </p>
+                        {{/if}}
+
+                    </div>
+                </aside>
+            </div>
+            <div class="mobile-cart inline-block">
+                <a href="{{urls.cart}}">
+                    <i class="icon icon-shopping-cart"></i>
+                    <span class="item-count">{{cart.quantity}}</span>
+                </a>
+                <span id="cart-items-notification" 0="" class="has-items"></span>
+            </div>
+
+            <nav class="header-social inline-block">
+                <ul>
+                    <li><a href="https://instagram.com/flukerfarms/" target="_blank"><i class="icon icon-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/FlukerFarms" target="_blank"><i class="icon icon-facebook-square"></i></a></li>
+                    <li><a href="https://twitter.com/flukerfarms" target="_blank"><i class="icon icon-twitter-square"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCx9yT4moV2986mk3QRvF8AQ" target="_blank"><i class="icon icon-youtube"></i></a></li>
+                </ul>
+            </nav>
         </div>
-    {{/if}}
+        <div class="units-row">
+            <div class="unit-30 forms border-right desktop-hidden">
+                <form action="{{urls.search}}">
+                    <label for="" class="input-groups">
+                        <input type="text" name="search_query" placeholder="" maxlength="100">
+                        <span class="btn-append"><button class="btn btn-gray">Go</button></span>
+                    </label>
+                </form>
+            </div>
 
-
-    <div class="navPages-container" id="menu" data-menu>
-        {{> components/common/navigation-menu}}
+        </div>
     </div>
 
 </header>

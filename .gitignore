@@ -4,3 +4,4 @@ node_modules/
 assets/css-artifacts
 assets/js/bundle.js
 assets/js/bundle.js.map
+.idea

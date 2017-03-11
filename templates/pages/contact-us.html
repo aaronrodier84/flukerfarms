@@ -1,31 +1,96 @@
+{{#partial "hero"}}
+    {{> components/common/top-with-menu-interior}}
+{{/partial}}
+
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<main>
 
-<main class="page">
+    <h1 class="text-center">{{page.title}}</h1>
 
-    <h1 class="page-heading">{{page.title}}</h1>
 
-    {{#if page.sub_pages}}
-        <nav class="navBar">
-            <ul class="navBar-section">
-                {{#each page.sub_pages}}
-                    <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
-                {{/each}}
-            </ul>
-        </nav>
-    {{/if}}
+    <nav id="section-top-nav">
 
-    <div class="page-content page-content--centered">
-        {{#if forms.contact.success}}
-            {{{lang 'forms.contact_us.successful' shopPath=urls.home}}}
-        {{else}}
-            <p>{{{page.content}}}</p>
-            {{> components/page/contact-us-form}}
-        {{/if}}
+    </nav>
 
+    <div class="textured-background units-row small-container container-padding">
+        <article class="unit-70">
+            {{#if forms.contact.success}}
+                {{{lang 'forms.contact_us.successful' shopPath=urls.home}}}
+            {{else}}
+                <p>{{{page.content}}}</p>
+                <form data-contact-form class="form" action="{{urls.contact_us_submit}}" method="post">
+                    {{#if forms.contact.error}}
+                    {{> components/common/alert-error forms.contact.error}}
+                    {{/if}}
+
+                    <input type="hidden" name="page_id" id="page_id" value="{{forms.contact.page_id}}">
+
+                    <div class="dform">
+                        <div class="dform_element dform_fieldset dftop_label " id="forms_field_1" style="">
+                            <div class="dform_container">
+                                <fieldset>
+                                    <legend></legend>
+                                    <div class="dfcolumns">
+                                        <div class="column column-last sortable noborder" data-number="1" style="width:99%;">
+                                            {{#if forms.contact.name}}
+                                            <div class="dform_element dform_text_input dftop_label dform_required" id="forms_field_2" style="">
+                                                <label class="dform_label" for="contact_fullname">{{lang 'forms.contact_us.full_name'}} <span class="req">*</span></label>
+                                                <div class="dform_container">
+                                                    <input class="text required validate[required]" required="required" type="text" id="contact_fullname" name="contact_fullname" value="{{customer.name}}">
+                                                </div>
+                                            </div>
+                                            {{/if}}
+
+                                            <div class="dform_element dform_email dftop_label dform_required" id="forms_field_3" style="">
+                                                <label class="dform_label" for="contact_email">{{lang 'forms.contact_us.email'}} <span class="req">*</span></label>
+                                                <div class="dform_container">
+                                                    <input class="text required validate[required]" type="text" id="contact_email" name="contact_email" value="{{customer.email}}">
+                                                </div>
+                                            </div>
+
+                                            <div class="dform_element dform_textarea dftop_label " id="forms_field_7" style="">
+                                                <label class="dform_label" for="contact_question">{{lang 'forms.contact_us.question'}}</label>
+                                                <div class="dform_container">
+                                                    <textarea name="contact_question" id="contact_question" rows="4" cols="50" class="form-input"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br clear="all">
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+
+                        <div class="dform_element submit_button">
+                            <div class="dform_container">
+                                <div class="dfinput_full">
+                                    <input type="submit" class="submit" name="submit_button" value="{{lang 'forms.contact_us.submit' }}" data-value="{{lang 'forms.contact_us.submit' }}" data-wait="Verifying...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            {{/if}}
+
+
+        </article>
+        <aside class="unit-30">
+            <h3 class="underlined-headlines">Quick Links</h3>
+            <nav id="blog-side-nav" class="main">
+                <ul>
+                    <li><a href="/categories">Our Products</a></li>
+
+                    <li><a href="/reptile-u">Welcome To Reptile U</a></li>
+
+                    <li><a href="/reptile-u/knowledge-base/teaching-aids">Teaching Aids</a></li>
+
+                    <li><a href="/castle-crib">Castle Crib</a></li>
+
+                </ul>
+            </nav>
+        </aside>
     </div>
-
 </main>
 
 {{/partial}}

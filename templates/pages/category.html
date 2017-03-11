@@ -14,28 +14,104 @@ category:
     {{/if}}
 {{/partial}}
 
+{{#partial "hero"}}
+    {{> components/common/top-with-menu-interior}}
+{{/partial}}
+
 {{#partial "page"}}
+    {{#if category.subcategories}}
+    <main class="height-fix products">
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-{{#if category.image}}
-    <img src="{{getImage category.image 'zoom_size'}}">
-{{/if}}
-<h1 class="page-heading">{{category.name}}</h1>
-{{{category.description}}}
-{{{snippet 'categories'}}}
-<div class="page">
-    <aside class="page-sidebar" id="faceted-search-container">
-        {{> components/category/sidebar}}
-    </aside>
+        <article class="textured-background small-container container-padding">
 
-    <main class="page-content" id="product-listing-container">
-        {{#if category.products}}
-            {{> components/category/product-listing}}
-        {{else}}
-            <p>{{lang 'categories.no_products'}}</p>
-        {{/if}}
+            <h1 class="titles">Our Products</h1>
+            <p>Fluker's Cricket Farm is a premier online retailer of live insects and has developed the largest, healthiest and most hearty house&nbsp;crickets available. We are the leading producer of crickets and have an extensive feeder insect lineup to include mealworms, superworms, flightless&nbsp;fruit flies, hissing cockroaches and a complete line of reptile food and products. Order crickets online from our website today!&nbsp;</p>
+
+
+            <nav id="card-nav" class="products">
+                <ul class="units-row units-split">
+
+                    <li class="cards unit-25">
+                        <a href="/crickets-live-feeder-insects" class="bottom-box-shadow products live-insects">
+                            <i class="icomoon-live-insects"></i>
+                            <h3>Live Insects</h3>
+                        </a>
+                    </li>
+
+                    <li class="cards unit-25">
+                        <a href="/vitamins-health" class="bottom-box-shadow products vitamins-health">
+                            <i class="icomoon-vitamins-health"></i>
+                            <h3>Vitamins &amp; Health</h3>
+                        </a>
+                    </li>
+
+                    <li class="cards unit-25">
+                        <a href="/accessories" class="bottom-box-shadow products reptile-accessories">
+                            <i class="icomoon-reptile-accessories"></i>
+                            <h3>Reptile Accessories</h3>
+                        </a>
+                    </li>
+
+                    <li class="cards unit-25">
+                        <a href="/heating-lighting" class="bottom-box-shadow products heating-and-lighting">
+                            <i class="icomoon-heating-and-lighting"></i>
+                            <h3>Heating and Lighting</h3>
+                        </a>
+                    </li>
+
+                    <li class="cards unit-25">
+                        <a href="/plants-vines-bed" class="bottom-box-shadow products plants-vines-and-bedding">
+                            <i class="icomoon-plants-vines-and-bedding"></i>
+                            <h3>Plants, Vines, and Bedding</h3>
+                        </a>
+                    </li>
+
+                    <li class="cards unit-25">
+                        <a href="/diets" class="bottom-box-shadow products diets-and-nutrition">
+                            <i class="icomoon-diets-and-nutrition"></i>
+                            <h3>Diets and Nutrition</h3>
+                        </a>
+                    </li>
+
+                    <li class="cards unit-25">
+                        <a href="/feeder-supplies" class="bottom-box-shadow products feeder-supplies">
+                            <i class="icomoon-feeder-supplies"></i>
+                            <h3>Feeder Supplies</h3>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+        </article>
     </main>
-</div>
+    {{else}}
+    <main>
+        <nav id="category-toggle" class="small-container text-right">
+            <a href="/categories" id="view-all"><i class="icon icon-bars"></i> View All Categories</a>
+
+        </nav>
+        <article class="textured-background small-container container-padding">
+
+            <h1>{{category.name}}</h1>
+
+            <p>{{{category.description}}}</p>
+
+            <nav id="card-nav" class="products">
+                <ul class="units-row units-split">
+                    {{#each category.products}}
+                    <li class="cards unit-25">
+                        <a href="{{url}}" class="bottom-box-shadow products live-insects">
+                            <i><img class="listItem-image" src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}"></i>
+                            <h3>{{name}}</h3>
+                        </a>
+                    </li>
+                    {{/each}}
+
+                </ul>
+            </nav>
+        </article>
+    </main>
+    {{/if}}
 
 {{/partial}}
 {{> layout/base}}
