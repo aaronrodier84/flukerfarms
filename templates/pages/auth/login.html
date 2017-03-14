@@ -1,49 +1,97 @@
+{{#partial "hero"}}
+{{> components/common/top-with-menu-interior}}
+{{/partial}}
+
 {{#partial "page"}}
-<div class="login">
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-    <h1 class="page-heading">{{lang 'login.heading' }}</h1>
-    {{#if forms.login.error}}
-        {{> components/common/alert-error forms.login.error}}
-    {{/if}}
-    {{#if forms.login.success}}
-        {{> components/common/alert-success forms.login.success}}
-    {{/if}}
-    <div class="login-row">
-        <form class="login-form form" action="{{urls.auth.check_login}}" method="post">
-            <div class="form-field">
-                <label class="form-label" for="login_email">{{lang 'login.field_email'}}</label>
-                <input class="form-input" name="login_email" id="login_email" type="email">
-            </div>
-            <div class="form-field">
-                <label class="form-label" for="login_pass">{{lang 'login.field_password'}}</label>
-                <input class="form-input" id="login_pass" type="password" name="login_pass">
-            </div>
-            <div class="form-actions">
-                <input type="submit" class="button button--primary" value="{{lang 'login.submit_value' }}">
-                <a class="forgot-password" href="{{urls.auth.forgot_password}}">{{lang 'login.forgot_password' }}</a>
-            </div>
-        </form>
-        {{#if settings.account_creation_enabled}}
-            <div class="new-customer">
-                <div class="panel">
-                    <div class="panel-header">
-                        <h2 class="panel-title">{{lang 'login.new_customer.heading' }}</h2>
+<main>
+
+
+    <nav id="section-top-nav">
+
+    </nav>
+
+    <div class="textured-background units-row small-container container-padding">
+        <article class="unit-70">
+            <h1 class="page-heading">PLEASE SIGN IN</h1>
+            {{#if forms.login.error}}
+                {{> components/common/alert-error forms.login.error}}
+            {{/if}}
+            {{#if forms.login.success}}
+                {{> components/common/alert-success forms.login.success}}
+            {{/if}}
+
+            <form class="login-form form" action="{{urls.auth.check_login}}" method="post">
+
+                <div class="dform">
+                    <div class="dform_element dform_fieldset dftop_label " id="forms_field_1" style="">
+                        <div class="dform_container">
+                            <fieldset>
+                                <legend></legend>
+                                <div class="dfcolumns">
+                                    <div class="column column-last sortable noborder" data-number="1" style="width:99%;">
+
+                                        <div class="dform_element dform_text_input dftop_label dform_required" id="forms_field_2" style="">
+                                            <label class="dform_label" for="login_email">{{lang 'login.field_email'}} <span class="req">*</span></label>
+                                            <div class="dform_container">
+                                                <input class="text required validate[required]" required="required" type="email" id="login_email" name="login_email">
+                                            </div>
+                                        </div>
+
+                                        <div class="dform_element dform_email dftop_label dform_required" id="forms_field_3" style="">
+                                            <label class="dform_label" for="login_pass">{{lang 'login.field_password'}} <span class="req">*</span></label>
+                                            <div class="dform_container">
+                                                <input class="text required validate[required]" type="password" id="login_pass" name="login_pass">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br clear="all">
+                                </div>
+                            </fieldset>
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        <p class="new-customer-intro">{{lang 'login.new_customer.intro' }}</p>
-                        <ul class="new-customer-fact-list">
-                            <li class="new-customer-fact">{{lang 'login.new_customer.fact1' }}</li>
-                            <li class="new-customer-fact">{{lang 'login.new_customer.fact2' }}</li>
-                            <li class="new-customer-fact">{{lang 'login.new_customer.fact3' }}</li>
-                            <li class="new-customer-fact">{{lang 'login.new_customer.fact4' }}</li>
-                            <li class="new-customer-fact">{{lang 'login.new_customer.fact5' }}</li>
-                        </ul>
-                        <a href="{{urls.auth.create_account}}"><button class="button button--primary">{{lang 'login.new_customer.create_account' }}</button></a>
+
+                    <div class="dform_element submit_button">
+                        <div class="dform_container">
+                            <div class="dfinput_full">
+                                <input type="submit" class="submit" name="submit_button" value="{{lang 'login.submit_value' }}" data-value="{{lang 'login.submit_value' }}" data-wait="Verifying...">
+                            </div>
+                        </div>
                     </div>
+
+                    {{#if settings.account_creation_enabled}}
+                    <div class="new-customer">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <a href="{{urls.auth.forgot_password}}" class="bold">{{lang 'login.forgot_password' }}</a>
+                            </div>
+                            <div class="panel-header">
+                                <span class="panel-title bold">Not a member? </span>
+                                <a href="{{urls.auth.create_account}}" class="bold">{{lang 'login.new_customer.create_account' }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    {{/if}}
                 </div>
-            </div>
-        {{/if}}
+            </form>
+
+        </article>
+        <aside class="unit-30">
+            <h3 class="underlined-headlines">Quick Links</h3>
+            <nav id="blog-side-nav" class="main">
+                <ul>
+                    <li><a href="/categories">Our Products</a></li>
+
+                    <li><a href="/reptile-u">Welcome To Reptile U</a></li>
+
+                    <li><a href="/reptile-u/knowledge-base/teaching-aids">Teaching Aids</a></li>
+
+                    <li><a href="/castle-crib">Castle Crib</a></li>
+
+                </ul>
+            </nav>
+        </aside>
     </div>
-</div>
+</main>
 {{/partial}}
 {{> layout/base}}

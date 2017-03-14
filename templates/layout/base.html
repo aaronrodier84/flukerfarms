@@ -30,9 +30,26 @@
         {{> components/common/footer }}
 
         <script src="{{cdn '/assets/js/bundle.js'}}"></script>
+        <script src="{{cdn '../vendor/jquery3.1.1.min.js'}}"></script>
+        <script src="{{cdn '../vendor/slick.min.js'}}"></script>
         <script>
             // Exported in app.js
             window.stencilBootstrap("{{template_file}}", {{jsContext}}).load();
+            $(document).ready(function(){
+                console.log('carousel');
+                // ==========================
+                /* Slick */
+                // ==========================
+                console.log($('#carousel'));
+                $('#carousel').slick({
+                    arrows:false,
+                    autoplay:true,
+                    autoplaySpeed:4000
+                });
+
+                console.log('carousel1');
+
+            })
         </script>
 
         {{{footer.scripts}}}

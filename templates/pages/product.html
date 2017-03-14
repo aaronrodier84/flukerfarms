@@ -9,27 +9,69 @@ product:
     similar_by_views:
         limit: {{theme_settings.productpage_similar_by_views_count}}
 ---
+
+{{#partial "hero"}}
+    {{> components/common/top-with-menu-interior}}
+{{/partial}}
+
 {{#partial "page"}}
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<main class="height-fix">
+    <nav id="category-toggle" class="small-container text-right">
+        <a href="/categories" id="view-all"><i class="icon icon-bars"></i> View All Categories</a>
 
-    {{#each product.shipping_messages}}
-        {{> components/common/alert-info message}}
-    {{/each}}
-
-    <div itemscope itemtype="http://schema.org/Product">
+    </nav>
+    <div itemscope itemtype="http://schema.org/Product" class="textured-background small-container container-padding">
         {{> components/products/product-view schema=true}}
-
-        {{#if product.videos.list.length}}
-            {{> components/products/videos product.videos}}
-        {{/if}}
-
-        {{#if settings.show_product_reviews}}
-            {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
-        {{/if}}
-
-        {{> components/products/tabs}}
-
     </div>
+</main>
+
+<nav id="tabs-list" class="nav-tabs small-container">
+    <ul>
+        <li data-query="products-description" class="on">
+            <a href="#">Product Description</a>
+        </li>
+    </ul>
+</nav>
+
+<section id="product-bottom">
+    <article data-query="full-description" class="small-container">
+        <div class="product-bottom-info">
+
+            <div class="on" data-query="products-description">
+                {{{product.description}}}
+            </div>
+
+        </div>
+
+        <h2 class="underlined">Related Products</h2>
+        <aside class="units-row">
+            {{#each product.related_products}}
+            <div class="unit-25 related-product">
+                <a href="{{url}}">
+
+                    <figure class="bottom-box-shadow">
+                        <img class="width-100" src="{{getImage image 'product_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}">
+                    </figure>
+
+                    <h4 class="title">{{name}}</h4>
+                    <div id="star-ratings">
+
+                        <i class="icon rating-toggle icon-star"></i>
+                        <i class="icon rating-toggle icon-star"></i>
+                        <i class="icon rating-toggle icon-star"></i>
+                        <i class="icon rating-toggle icon-star-half-o"></i>
+                        <i class="icon rating-toggle icon-star-o"></i>
+
+                    </div>
+                </a>
+            </div>
+            {{/each}}
+
+        </aside>
+
+
+    </article>
+</section>
 
 {{/partial}}
 {{> layout/base}}

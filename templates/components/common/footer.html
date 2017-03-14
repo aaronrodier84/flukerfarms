@@ -1,7 +1,7 @@
 <footer class="">
     <div class="units-row small-container">
         <div class="footer-logo pull-left">
-            <h1 class="brand"><a href="https://flukers.thinkx.net" title="Fluker's Cricket Farm">Fluker's Cricket Farm</a></h1>
+            <h1 class="brand"><a href="/" title="Fluker's Cricket Farm">Fluker's Cricket Farm</a></h1>
             <nav class="footer-social">
                 <ul>
                     <li><a href="https://instagram.com/flukerfarms/" target="_blank"><i class="icon icon-instagram"></i></a></li>
@@ -12,12 +12,19 @@
             </nav>
         </div>
         <div class="unit-25 footer-div footer-subscribe">
+            {{#if settings.show_newsletter_box}}
             <h3>Get Updates</h3>
             <p>Submit your email address to receive special offers.</p>
-            <div class="forms forms-inline">
-                <input type="email" id="email">
-                <button class="btn btn-green">Submit</button>
-            </div>
+            <form class="form" action="{{urls.subscribe.action}}" method="post">
+                <input type="hidden" name="action" value="subscribe">
+                <input type="hidden" name="nl_first_name" value="bc">
+                <input type="hidden" name="check" value="1">
+                <div class="forms forms-inline">
+                    <input type="email" id="nl_email" name="nl_email"  value="{{customer.email}}">
+                    <button type="submit" class="btn btn-green">Submit</button>
+                </div>
+            </form>
+            {{/if}}
         </div>
         <div class="border-left unit-33 footer-div">
             <h3>Get In Touch</h3>
@@ -37,7 +44,7 @@
 
 
     <div id="bottom-footer" class="text-center">
-        <p class="uppercase"><a href="/privacy-policy">Privacy Policy</a> | <a href="/products">Products &amp; Shipping</a></p>
+        <p class="uppercase"><a href="/privacy-policy">Privacy Policy</a> | <a href="/categories">Products &amp; Shipping</a></p>
         <p>© Fluker's Cricket Farm - <em>Raising and selling live crickets since 1953</em> | <a href="http://thinkx.net" target="_blank">Site by Xdesign</a></p>
     </div>
 </footer>
