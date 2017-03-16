@@ -1,6 +1,6 @@
 {
   "name": "Flukerfarms",
-  "version": "1.5.3",
+  "version": "1.0.0",
   "meta": {
     "price": 0,
     "documentation_url": "https://support.bigcommerce.com/articles/Public/Cornerstone-Theme-Manual",
@@ -48,7 +48,7 @@
     "homepage_blog_posts_count": 3,
     "productpage_videos_count": 8,
     "productpage_reviews_count": 9,
-    "productpage_related_products_count": 10,
+    "productpage_related_products_count": 4,
     "productpage_similar_by_views_count": 10,
     "categorypage_products_per_page": 12,
     "brandpage_products_per_page": 12,
