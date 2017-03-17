@@ -1,55 +1,60 @@
+{{#partial "hero"}}
+    {{> components/common/top-with-menu-interior}}
+{{/partial}}
+
 {{#partial "page"}}
-<div class="page">
 
-    <main class="page-content" data-cart>
-        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
-        {{> components/cart/page-title}}
+<main class="page-content" data-cart>
+    <div class="textured-background small-container container-padding">
+        <nav id="breadcrumb-nav" class="breadcrumbs group">
+            <h2 class="pull-left headlines smaller"><i class="icon icon-shopping-cart"></i> Your Cart</h2>
+            <ul class="pull-right">
+                <li><a href="/crickets-live-feeder-insects"><i class="icon icon-angle-left"></i> Back to Store</a></li>
+            </ul>
+        </nav>
 
         <div data-cart-status>
             {{> components/cart/status-messages}}
         </div>
 
-        {{#if cart.items.length}}
-            <div class="loadingOverlay"></div>
+        <article class="units-row" id="store-packages">
 
-            <div data-cart-content>
-                {{> components/cart/content}}
+            <div class="unit-70">
+                <div data-cart-content>
+                    {{> components/cart/content}}
+                </div>
+
             </div>
 
-            <div data-cart-totals>
-                {{> components/cart/totals}}
-            </div>
+            <aside style="position: relative; top: auto; left: auto; width: 225px;" class="unit-30 mobile-hidden" id="cart-totals-receipt">
 
-            {{#if cart.show_primary_checkout_button}}
-                <div class="cart-actions">
-                    <a class="button button--primary" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}">{{lang 'cart.checkout.button'}}</a>
-                    {{#if cart.show_multiple_address_shipping}}
-                        <a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">
-                            {{lang 'cart.preview.checkout_multiple'}}
-                        </a>
+                <div class="input-groups width-100 margin-bottom cart-actions">
+                    <!--<button type="submit" value="shopping/view-cart" id="update-cart" name="return" class="btn btn-blue width-50" data-target="cart-update"> Update</button>-->
+                    {{#if cart.show_primary_checkout_button}}
+                        <a class="btn btn-green width-100" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}">{{lang 'cart.checkout.button'}}</a>
+                        {{#if cart.show_multiple_address_shipping}}
+                        <!--<a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">-->
+                            <!--{{lang 'cart.preview.checkout_multiple'}}-->
+                        <!--</a>-->
+                        {{/if}}
+                    {{else}}
+                        <a class="btn btn-green width-100" href="{{urls.home}}" title="{{lang 'cart.continue_shopping'}}">{{lang 'cart.continue_shopping'}}</a>
                     {{/if}}
                 </div>
-            {{else}}
-                <div class="cart-actions">
-                    <a class="button" href="{{urls.home}}" title="{{lang 'cart.continue_shopping'}}">{{lang 'cart.continue_shopping'}}</a>
-                </div>
-            {{/if}}
 
-            {{#if cart.additional_checkout_buttons}}
-                <div class="cart-additionalCheckoutButtons">
-                    {{#each cart.additional_checkout_buttons}}
-                        {{{this}}}
-                    {{/each}}
+                <div data-cart-totals>
+                    {{> components/cart/totals}}
                 </div>
-            {{/if}}
-        {{else}}
-            <h3>{{lang 'cart.checkout.empty_cart'}}</h3>
-        {{/if}}
 
-        {{{snippet 'cart'}}}
-    </main>
-</div>
+            </aside>
+
+            <div class="tools-message" id="cart-update">
+                <h3>Cart Successfully Updated</h3>
+            </div>
+        </article>
+    </div>
+</main>
+
 {{/partial}}
 {{> layout/base}}
 `

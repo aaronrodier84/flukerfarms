@@ -1,8 +1,28 @@
+
+{{#partial "hero"}}
+    {{> components/common/top-with-menu-interior}}
+{{/partial}}
+
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<main>
+    <h1 class="text-center">Welcome to </h1>
+    <nav id="section-top-nav">
+        <ul id="">
+            <li class="here first"><a href="/reptile-u/blog/">Blog</a></li>
+            <li><a href="/reptile-u/care-sheets/">Care Sheets</a></li>
+            <li><a href="/reptile-u/knowledge-base/">Knowledge-Base</a></li>
+            <li><a href="/reptile-u/store-support/">Video Library</a></li>
+            <li class="last"><a href="/reptile-u/newsletters/">Newsletters</a></li>
+        </ul>
+    </nav>
+    <div class="textured-background units-row small-container container-padding">
 
-{{> components/blog/post post=blog.post show_tags=true}}
+        {{> components/blog/post post=blog.post show_tags=true}}
+
+    </div>
+</main>
+
 
 {{/partial}}
 {{> layout/base}}
