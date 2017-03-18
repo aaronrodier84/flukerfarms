@@ -1,5 +1,3 @@
-
-
 /* =============================================================================
    Imports
    ========================================================================== */
@@ -5787,7 +5785,7 @@ nav ul {
 .cards a.products h3 {
   color: #709633;
   font-size: 1.1em;
-  height: 70px;
+  height: 84px;
 }
 .cards a.products:hover h3 {
   color: white;
@@ -7576,4 +7574,67 @@ a.btn-red {
   border: none;
 }
 
+
+/* pagination
+----------------------------------------------------------------------------------------*/
+.pagination-list {
+    font-size: 0px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.pagination-list {
+    display: block;
+    margin-left: 0px;
+}
+
+li.pagination-item:first-child {
+  margin-left: 0px;
+}
+.pagination-item.pagination-item--current {
+  border-color: #E8E8E8;
+  border-radius: 4px;
+  margin: 0px 0.35714rem 0px 0.78571rem;
+}
+.pagination-list .pagination-item {
+  display: inline-block;
+}
+li.pagination-item {
+  cursor: pointer;
+}
+.pagination-list li {
+  display: block;
+}
+.pagination-list li {
+  color: #989898;
+  font-size: 1rem;
+  margin-left: 0.35714rem;
+}
+.pagination-item {
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+.pagination-item .pagination-link {
+  text-decoration: none;
+  transition: all 0.2s ease 0s;
+}
+li.pagination-item--current a, li.pagination-item--current button {
+  color: #4F4F4F;
+  cursor: default;
+}
+.pagination-list li a, .pagination-list li button {
+  border-radius: 4px;
+  transition: background-color 300ms ease-out 0s;
+  background: none repeat scroll 0% 0% transparent;
+  color: #989898;
+  display: block;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: inherit;
+  padding: 0.28571rem 0.5rem;
+}
+
+.pagination-item--next {
+  float: right !important;
+}
 

@@ -1,7 +1,11 @@
-<ul class="productGrid">
-    {{#each products}}
-    <li class="product">
-        {{>components/products/card show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer}}
-    </li>
-    {{/each}}
-</ul>
+<nav id="card-nav" class="products">
+    <ul class="units-row units-split">
+        {{#each products}}
+        <li class="cards unit-25">
+            {{>components/products/card show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer}}
+
+        </li>
+        {{/each}}
+
+    </ul>
+</nav>

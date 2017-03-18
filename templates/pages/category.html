@@ -96,19 +96,8 @@ category:
 
             <p>{{{category.description}}}</p>
 
-            <nav id="card-nav" class="products">
-                <ul class="units-row units-split">
-                    {{#each category.products}}
-                    <li class="cards unit-25">
-                        <a href="{{url}}" class="bottom-box-shadow products live-insects">
-                            <i><img class="listItem-image" src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}"></i>
-                            <h3>{{name}}</h3>
-                        </a>
-                    </li>
-                    {{/each}}
+            {{> components/products/grid products=category.products}}
 
-                </ul>
-            </nav>
         </article>
     </main>
     {{/if}}
