@@ -3,22 +3,17 @@
 {{/partial}}
 
 {{#partial "page"}}
+
 <main>
+    <nav id="category-toggle" class="small-container text-right">
+        <a href="/categories" id="view-all"><i class="icon icon-bars"></i> View All Categories</a>
 
-    <h1 class="text-center">{{page.title}}</h1>
-
-    {{#if page.sub_pages}}
-    <nav id="section-top-nav">
-        <ul id="">
-            {{#each page.sub_pages}}
-                <li class="first last"><a href="{{url}}">{{title}}</a></li>
-            {{/each}}
-
-        </ul>
     </nav>
-    {{/if}}
-
     <article class="textured-background small-container container-padding">
+
+        <h1>{{page.title}}</h1>
+
+        <hr>
 
         {{#replace '%%Syndicate%%' page.content}}
             {{> components/page/rss_feed}}
