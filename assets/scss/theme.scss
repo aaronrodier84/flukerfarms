@@ -7638,3 +7638,9 @@ li.pagination-item--current a, li.pagination-item--current button {
   float: right !important;
 }
 
+.live-chat-button{
+  position: fixed;
+  bottom: 0;
+  z-index: 99999;
+}
+
