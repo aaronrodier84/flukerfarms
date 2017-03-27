@@ -1,16 +1,16 @@
 {{#if social_media}}
-    <ul class="socialLinks socialLinks--alt">
+    <ul>
         {{#each social_media}}
             <li class="socialLinks-item">
-                {{#if display_name '===' 'google+'}}
-                    <a class="icon icon--google" href="{{url}}" target="_blank">
-                        <svg><use xlink:href="#icon-google" /></svg>
-                    </a>
+            {{#if display_name '===' 'google+'}}
+                <a href="{{url}}" target="_blank"><i class="icon icon-google-plus-square"></i></a>
+            {{else}}
+                {{#if display_name '===' 'instagram'}}
+                    <a href="{{url}}" target="_blank"><i class="icon icon-{{display_name}}"></i></a>
                 {{else}}
-                    <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank">
-                        <svg><use xlink:href="#icon-{{display_name}}" /></svg>
-                    </a>
+                    <a href="{{url}}" target="_blank"><i class="icon icon-{{display_name}}-square"></i></a>
                 {{/if}}
+            {{/if}}
             </li>
         {{/each}}
     </ul>

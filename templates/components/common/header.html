@@ -1,6 +1,11 @@
 <header>
     <div class="container">
-        <h1 class="brand"><a href="/">{{settings.store_name}}</a></h1>
+        <h1 class="brand">
+            <a href="/">{{settings.store_name}}</a>
+        </h1>
+        <div class="facebooke-link-button pull-left">
+            <div class="fb-like" data-href="https://flukerfarms.com" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+        </div>
         <div class="mobile-header pull-right ">
             <div class="border-right header-search inline-block">
                 <form action="{{urls.search}}">
@@ -45,12 +50,7 @@
             </div>
 
             <nav class="header-social inline-block">
-                <ul>
-                    <li><a href="https://instagram.com/flukerfarms/" target="_blank"><i class="icon icon-instagram"></i></a></li>
-                    <li><a href="https://www.facebook.com/FlukerFarms" target="_blank"><i class="icon icon-facebook-square"></i></a></li>
-                    <li><a href="https://twitter.com/flukerfarms" target="_blank"><i class="icon icon-twitter-square"></i></a></li>
-                    <li><a href="https://www.youtube.com/channel/UCx9yT4moV2986mk3QRvF8AQ" target="_blank"><i class="icon icon-youtube"></i></a></li>
-                </ul>
+                {{> components/common/social-links}}
             </nav>
         </div>
         <div class="units-row">
