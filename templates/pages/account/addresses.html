@@ -1,12 +1,20 @@
-{{#partial "page"}}
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-    <h2 class="page-heading">{{lang 'account.addresses.heading' }}</h2>
-    {{> components/account/navigation account_page='addresses'}}
+{{#partial "hero"}}
+    {{> components/common/top-with-menu-interior}}
+{{/partial}}
 
-    <div class="account account--fixedLarge">
-        <div class="account-body">
-            {{> components/account/address-list }}
+{{#partial "page"}}
+<main>
+    <article class="textured-background small-container container-padding">
+        {{> components/account/navigation account_page='addresses'}}
+        <h1 class="page-heading">{{lang 'account.addresses.heading' }}</h1>
+
+        <div class="account account--fixedLarge">
+            <div class="account-body">
+                {{> components/account/address-list }}
+            </div>
         </div>
-    </div>
+    </article>
+</main>
+
 {{/partial}}
 {{> layout/base}}

@@ -24,7 +24,7 @@
                     <form action="{{delete_url}}" method="post" data-delete-address="{{lang 'forms.address.confirm_delete'}}">
                         <div class="form-actions">
                             <a class="button button--primary button--small" href="{{edit_url}}">{{lang 'common.edit' }}</a>
-                            <button type="submit" class="button secondary button--small">{{lang 'common.delete' }}</button>
+                            <button type="submit" class="submit">{{lang 'common.delete' }}</button>
                         </div>
                     </form>
                 </div>
@@ -32,13 +32,8 @@
         </li>
     {{/each}}
     <li class="address">
-        <a class="panel panel--address panel--newAddress" href="{{urls.account.add_address}}">
-            <span class="panel-body">
-                <span class="address-addNew">
-                    <span class="address-symbol">&plus;</span>
-                    <h5 class="address-title">{{lang 'account.addresses.new_address' }}</h5>
-                </span>
-            </span>
+        <a href="{{urls.account.add_address}}">
+            {{lang 'account.addresses.new_address' }}
         </a>
     </li>
 </ul>
