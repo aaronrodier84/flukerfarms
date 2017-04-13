@@ -7,3 +7,19 @@
 // -----------------------------------------------------------------------------
 
 
+#Header{
+  background: url(../img/textured-bg.png);
+}
+
+#LogoContainer{
+  h1{
+    a{
+      background: url(../img/logo.svg) no-repeat;
+      text-indent: -5000px;
+      font-size: 0;
+      width: 220px;
+      height: 65px;
+      display: block;
+    }
+  }
+}
