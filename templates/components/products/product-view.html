@@ -129,6 +129,12 @@
                                 </div>
                                 {{{snippet 'product_addtocart'}}}
                             {{/or}}
+                        {{else}}
+                            <p class=""><strong>Where to purchase</strong></p>
+
+                            <a class="external-store-link inline-block" href="https://www.google.com/search?client=opera&amp;q={{product.title}}&amp;sourceid=opera&amp;ie=UTF-8&amp;oe=UTF-8#tbm=shop&amp;q=Fluker+Farms+{{product.title}}+" target="_blank">
+                                <img src="{{cdn 'img/google-logo.png'}}" alt="Find this product on Google.">
+                            </a>
                         {{/if}}
                         {{#if product.out_of_stock}}
                             {{#if product.out_of_stock_message}}
