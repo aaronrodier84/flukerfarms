@@ -5,20 +5,19 @@
 {{#partial "page"}}
 <main>
 
-    <h1 class="text-center">Welcome to Reptile U</h1>
+    <h1 class="text-center"><img src="{{cdn 'img/reptileU.gif'}}" width="400"></h1>
 
     <nav id="section-top-nav">
         <ul id="">
-            <li class="first"><a href="/reptile-u/blog/">Blog</a></li>
-            <li><a href="/reptile-u/care-sheets/">Care Sheets</a></li>
-            <li><a href="/reptile-u/knowledge-base/">Knowledge-Base</a></li>
-            <li class="here"><a href="/reptile-u/store-support/">Video Library</a></li>
-            <li class="last"><a href="/reptile-u/newsletters/">Newsletters</a></li>
+            <li class="here first"><a href="/reptile-u/library/">Library</a></li>
+            <li><a href="/reptile-u/knowledge-base/teaching-aids">Teaching Resources</a></li>
+            <li><a href="/reptile-u/newsletter/">Newsletters</a></li>
+            <li class="last"><a href="/reptile-u/blog/">Blog</a></li>
         </ul>
     </nav>
 
     <div class="textured-background units-row small-container container-padding">
-        <article class="unit-70">
+        <article class="unit-100">
             <h1>{{page.title}}</h1>
             {{#replace '%%Syndicate%%' page.content}}
                 {{> components/page/rss_feed}}
@@ -28,16 +27,16 @@
 
         </article>
 
-        <aside class="unit-30">
-            <h3 class="underlined-headlines">Explore This Section</h3>
-            <nav id="blog-side-nav" class="main">
-                <ul id="">
-                    <li class="first"><a href="/reptile-u/store-support/feeder-insect-videos/">Feeder Insect Videos</a></li>
-                    <li><a href="/reptile-u/store-support/basic-reptile-care/">Bearded Dragon Care Videos</a></li>
-                    <li class="last"><a href="/reptile-u/store-support/aquatic-turtle-care-videos/">Aquatic Turtle Care Videos</a></li>
-                </ul>
-            </nav>
-        </aside>
+        <!--<aside class="unit-30">-->
+            <!--<h3 class="underlined-headlines">Explore This Section</h3>-->
+            <!--<nav id="blog-side-nav" class="main">-->
+                <!--<ul id="">-->
+                    <!--<li class="first"><a href="/reptile-u/store-support/feeder-insect-videos/">Feeder Insect Videos</a></li>-->
+                    <!--<li><a href="/reptile-u/store-support/basic-reptile-care/">Bearded Dragon Care Videos</a></li>-->
+                    <!--<li class="last"><a href="/reptile-u/store-support/aquatic-turtle-care-videos/">Aquatic Turtle Care Videos</a></li>-->
+                <!--</ul>-->
+            <!--</nav>-->
+        <!--</aside>-->
     </div>
 
 </main>
