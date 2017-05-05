@@ -44,6 +44,7 @@
     "pace": "hubspot/pace#a03f1f1de62c9cea6c88b2267b8d7a83858b6cb6",
     "slick-carousel": "1.5.5",
     "time-grunt": "^1.2.2",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "expose-loader": "^0.7.1"
   }
 }

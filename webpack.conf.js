@@ -14,6 +14,14 @@ module.exports = {
                     cacheDirectory: true,
                     presets: ['es2015-loose'],
                 }
+            },
+            {
+                test: /jquery\.js$/,
+                loader: 'expose?$'
+            },
+            {
+                test: /jquery\.js$/,
+                loader: 'expose?jQuery'
             }
         ]
     },
