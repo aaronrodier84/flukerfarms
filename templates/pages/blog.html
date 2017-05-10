@@ -29,39 +29,43 @@ blog:
     </nav>
     <div class="textured-background units-row small-container container-padding">
 
-        {{#each (limit blog.posts 1)}}
-        <article class="unit-70">
-            <figure class="width-100">
+        {{#each blog.posts}}
+        <article class="unit-100">
+            <!--<figure class="width-100" align="center">-->
 
 
-                <img src="{{getImage thumbnail 'blog_size'}}" alt="">
+                <!--<img src="{{getImage thumbnail 'blog_size'}}" alt="" style="width: auto;">-->
 
-            </figure>
+            <!--</figure>-->
             <h2 class="headlines smaller">{{title}}</h2>
             <p class="details">Posted {{date_published}} by {{author}}</p>
-            <ul id="social-share">
-                <li id="facebook-share"><i class="icon icon-facebook-square"></i></li>
-                <li id="twitter-share"><i class="icon icon-twitter-square"></i></li>
-                <li id="linkedin-share"><i class="icon icon-linkedin-square"></i></li>
-                <li id="google-share"><i class="icon icon-google-plus-square"></i></li>
-            </ul>
+            <!--<ul id="social-share">-->
+                <!--<li id="facebook-share"><i class="icon icon-facebook-square"></i></li>-->
+                <!--<li id="twitter-share"><i class="icon icon-twitter-square"></i></li>-->
+                <!--<li id="linkedin-share"><i class="icon icon-linkedin-square"></i></li>-->
+                <!--<li id="google-share"><i class="icon icon-google-plus-square"></i></li>-->
+            <!--</ul>-->
             <p>{{summary}}</p>
             <a href="{{url}}" class="btn btn-blue">Read more <i class="icon icon-angle-double-right"></i></a>
         </article>
         {{/each}}
 
-        <aside class="unit-30">
-            <h3 class="underlined-headlines">Recent Posts</h3>
-            <nav id="blog-side-nav">
-                <ul>
-                    {{#each (limit blog.posts 5)}}
-                    <li><a href="{{url}}">{{title}}</a></li>
-                    {{/each}}
+        {{> components/common/paginator pagination.blog}}
 
-                </ul>
-            </nav>
+        <!--<aside class="unit-30">-->
+            <!--<h3 class="underlined-headlines">All Posts</h3>-->
+            <!--<nav id="blog-side-nav">-->
+                <!--<ul>-->
+                    <!--{{#each blog.posts}}-->
+                    <!--<li><a href="{{url}}">{{title}}</a></li>-->
+                    <!--{{/each}}-->
 
-        </aside>
+                <!--</ul>-->
+
+            <!--</nav>-->
+            <!--{{> components/common/paginator pagination.blog}}-->
+
+        <!--</aside>-->
     </div>
 </main>
 

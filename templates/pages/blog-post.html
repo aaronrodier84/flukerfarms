@@ -1,4 +1,10 @@
-
+---
+blog:
+    recent_posts:
+        limit: 100
+        pages: 3
+        summary: 200
+---
 {{#partial "hero"}}
     {{> components/common/top-with-menu-interior}}
 {{/partial}}
@@ -17,10 +23,27 @@
     </nav>
     <div class="textured-background units-row small-container container-padding">
 
-        {{> components/blog/post post=blog.post show_tags=true}}
+        <article class="unit-70">
+            {{> components/blog/post post=blog.post show_tags=true}}
+        </article>
+
+        <aside class="unit-30">
+            <h3 class="underlined-headlines">Recent Posts</h3>
+            <nav id="blog-side-nav">
+                <ul>
+                    {{#each (limit blog.recent_posts 30)}}
+                    <li><a href="{{url}}">{{title}}</a></li>
+                    {{/each}}
+
+                </ul>
+            </nav>
+
+        </aside>
 
     </div>
+
 </main>
+
 
 
 {{/partial}}
