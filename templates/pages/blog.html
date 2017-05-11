@@ -31,41 +31,53 @@ blog:
 
         {{#each blog.posts}}
         <article class="unit-100">
-            <!--<figure class="width-100" align="center">-->
+            {{#if thumbnail.data }}
+                <div class="unit-20">
+                    <img src="{{getImage thumbnail 'blog_size'}}" alt="" style="min-height: 70px;">
+                    <br/>
+                    <!--<figure class="width-100" align="center">-->
 
 
-                <!--<img src="{{getImage thumbnail 'blog_size'}}" alt="" style="width: auto;">-->
+                    <!--<img src="{{getImage thumbnail 'blog_size'}}" alt="" style="width: auto;">-->
 
-            <!--</figure>-->
-            <h2 class="headlines smaller">{{title}}</h2>
-            <p class="details">Posted {{date_published}} by {{author}}</p>
-            <!--<ul id="social-share">-->
-                <!--<li id="facebook-share"><i class="icon icon-facebook-square"></i></li>-->
-                <!--<li id="twitter-share"><i class="icon icon-twitter-square"></i></li>-->
-                <!--<li id="linkedin-share"><i class="icon icon-linkedin-square"></i></li>-->
-                <!--<li id="google-share"><i class="icon icon-google-plus-square"></i></li>-->
-            <!--</ul>-->
-            <p>{{summary}}</p>
-            <a href="{{url}}" class="btn btn-blue">Read more <i class="icon icon-angle-double-right"></i></a>
+                    <!--</figure>-->
+                </div>
+                <div class="unit-80">
+                    <h2 class="headlines smaller"><a href="{{url}}">{{title}}</a></h2>
+                    <p class="details">Posted {{date_published}} by {{author}}</p>
+                    <!--<ul id="social-share">-->
+                    <!--<li id="facebook-share"><i class="icon icon-facebook-square"></i></li>-->
+                    <!--<li id="twitter-share"><i class="icon icon-twitter-square"></i></li>-->
+                    <!--<li id="linkedin-share"><i class="icon icon-linkedin-square"></i></li>-->
+                    <!--<li id="google-share"><i class="icon icon-google-plus-square"></i></li>-->
+                    <!--</ul>-->
+                    <p>{{summary}}</p>
+                    <a href="{{url}}" class="btn btn-blue">Read more <i class="icon icon-angle-double-right"></i></a>
+                </div>
+
+                <div style="clear: both;"></div>
+            {{else}}
+                <div class="unit-100">
+                    <h2 class="headlines smaller"><a href="{{url}}">{{title}}</a></h2>
+                    <p class="details">Posted {{date_published}} by {{author}}</p>
+                    <!--<ul id="social-share">-->
+                    <!--<li id="facebook-share"><i class="icon icon-facebook-square"></i></li>-->
+                    <!--<li id="twitter-share"><i class="icon icon-twitter-square"></i></li>-->
+                    <!--<li id="linkedin-share"><i class="icon icon-linkedin-square"></i></li>-->
+                    <!--<li id="google-share"><i class="icon icon-google-plus-square"></i></li>-->
+                    <!--</ul>-->
+                    <p>{{summary}}</p>
+                    <a href="{{url}}" class="btn btn-blue">Read more <i class="icon icon-angle-double-right"></i></a>
+                </div>
+
+                <div style="clear: both;"></div>
+            {{/if}}
         </article>
         {{/each}}
+        <div style="clear: both;"></div>
 
         {{> components/common/paginator pagination.blog}}
 
-        <!--<aside class="unit-30">-->
-            <!--<h3 class="underlined-headlines">All Posts</h3>-->
-            <!--<nav id="blog-side-nav">-->
-                <!--<ul>-->
-                    <!--{{#each blog.posts}}-->
-                    <!--<li><a href="{{url}}">{{title}}</a></li>-->
-                    <!--{{/each}}-->
-
-                <!--</ul>-->
-
-            <!--</nav>-->
-            <!--{{> components/common/paginator pagination.blog}}-->
-
-        <!--</aside>-->
     </div>
 </main>
 
