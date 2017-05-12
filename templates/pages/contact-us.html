@@ -49,6 +49,42 @@
                                                 </div>
                                             </div>
 
+                                            {{#if forms.contact.phone}}
+                                            <div class="dform_element dform_text_input dftop_label" id="forms_field_4" style="">
+                                                <label class="dform_label" for="contact_phone">{{lang 'forms.contact_us.phone'}}</label>
+                                                <div class="dform_container">
+                                                    <input class="text" type="text" id="contact_phone" name="contact_phone" value="{{customer.phone}}">
+                                                </div>
+                                            </div>
+                                            {{/if}}
+
+                                            {{#if forms.contact.order}}
+                                            <div class="dform_element dform_text_input dftop_label" id="forms_field_5" style="">
+                                                <label class="dform_label" for="contact_orderno">{{lang 'forms.contact_us.order'}}</label>
+                                                <div class="dform_container">
+                                                    <input class="text" type="text" id="contact_orderno" name="contact_orderno">
+                                                </div>
+                                            </div>
+                                            {{/if}}
+
+                                            {{#if forms.contact.company}}
+                                            <div class="dform_element dform_text_input dftop_label" id="forms_field_5" style="">
+                                                <label class="dform_label" for="contact_companyname">{{lang 'forms.contact_us.company'}}</label>
+                                                <div class="dform_container">
+                                                    <input class="text" type="text" id="contact_companyname" name="contact_companyname">
+                                                </div>
+                                            </div>
+                                            {{/if}}
+
+                                            {{#if forms.contact.rma}}
+                                            <div class="dform_element dform_text_input dftop_label" id="forms_field_5" style="">
+                                                <label class="dform_label" for="contact_rma">{{lang 'forms.contact_us.rma'}}</label>
+                                                <div class="dform_container">
+                                                    <input class="text" type="text" id="contact_rma" name="contact_rma">
+                                                </div>
+                                            </div>
+                                            {{/if}}
+
                                             <div class="dform_element dform_textarea dftop_label " id="forms_field_7" style="">
                                                 <label class="dform_label" for="contact_question">{{lang 'forms.contact_us.question'}}</label>
                                                 <div class="dform_container">
