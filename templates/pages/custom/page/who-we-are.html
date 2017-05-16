@@ -5,21 +5,25 @@
 {{#partial "page"}}
 <main>
 
-    <h1 class="text-center">{{page.title}}</h1>
+    <h1 class="text-center">WHO WE ARE</h1>
 
-    {{#if page.sub_pages}}
     <nav id="section-top-nav">
         <ul id="">
-            {{#each page.sub_pages}}
-                <li class="first last"><a href="{{url}}">{{title}}</a></li>
-            {{/each}}
+            <!--{{#each page.sub_pages}}-->
+                <!--<li class="first last"><a href="{{url}}">{{title}}</a></li>-->
+            <!--{{/each}}-->
+
+            <li class="first"><a href="/community-partnerships/">Community Partnerships</a></li>
+            <li class=""><a href="/strategic-partnerships/">Strategic Partnerships</a></li>
+            <li class=""><a href="/staff/">Staff</a></li>
+            <li class="last"><a href="/who-we-are/test/">Tour of the Farm</a></li>
 
         </ul>
     </nav>
-    {{/if}}
+    
 
     <article class="textured-background small-container container-padding">
-
+        <h1>{{page.title}}</h1>
         {{#replace '%%Syndicate%%' page.content}}
             {{> components/page/rss_feed}}
         {{else}}
