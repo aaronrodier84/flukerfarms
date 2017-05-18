@@ -7681,3 +7681,98 @@ a.external-store-link {
   max-width: 263px;
 }
 
+
+#modal-review-form{
+  left: 50%;
+  margin: 0 auto;
+  max-height: 90%;
+  max-width: 95%;
+  min-height: 240px;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+  right: 0;
+  top: 100px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  position: absolute;
+  display: none;
+  width: 100%;
+
+  @media screen and (min-width: 801px) {
+    width: 900px;
+  }
+  .modal-header{
+    border-bottom: 1px solid #e8e8e8;
+    padding: 1rem 0;
+    position: relative;
+    padding-left: 2.25rem;
+    padding-right: 3.03571rem;
+
+    .modal-header-title {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: 801px) {
+      .modal-header-title {
+        font-size: 25px;
+      }
+    }
+
+    .modal-close {
+      height: 2.28571rem;
+      width: 2.28571rem;
+      color: #4f4f4f;
+      font-size: 26px;
+      line-height: 2.28571rem;
+      padding: 0;
+      position: absolute;
+      text-align: center;
+      text-decoration: none;
+      z-index: 50;
+    }
+  }
+
+  .modal-body {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 2.25rem 2.25rem;
+
+    @media screen and (min-width: 801px) {
+      .writeReview-productDetails {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+
+  .forms{
+    .form-select{
+      background: white;
+      padding: 5px;
+      border: 1px solid lightgray;
+      width: 100%;
+    }
+
+    .form-input{
+      width: 100%;
+    }
+
+    .form-inlineMessage {
+      color: #ff7d7d;
+      display: none;
+    }
+
+    .form-field--error{
+      .form-input, input, select{
+        border: 1px solid #ff7d7d;
+      }
+    }
+  }
+}
+

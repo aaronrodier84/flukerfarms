@@ -30,13 +30,36 @@
                 <div class="mobile-headline">
                     <div class="unit-70 purchasable-title">
                         <h1 itemprop="name">{{product.title}}</h1>
-                        <div id="star-ratings">
 
-                            <i class="icon rating-toggle icon-star"></i>
-                            <i class="icon rating-toggle icon-star"></i>
-                            <i class="icon rating-toggle icon-star"></i>
-                            <i class="icon rating-toggle icon-star-half-o"></i>
-                            <i class="icon rating-toggle icon-star-o"></i>
+                        <div class="productView-rating"{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}>
+                            <div id="star-ratings">
+                                <input type="hidden" id="ratingValue" value="{{product.rating}}">
+                                <i class="icon rating-toggle icon-star"></i>
+                                <i class="icon rating-toggle icon-star"></i>
+                                <i class="icon rating-toggle icon-star"></i>
+                                <i class="icon rating-toggle icon-star-half-o"></i>
+                                <i class="icon rating-toggle icon-star-o"></i>
+                                {{#if settings.show_product_rating}}
+                                <span class="productView-reviewLink">
+                                    {{#if product.num_reviews '>' 0}}
+                                        <a href="{{product.url}}#product-reviews">
+                                            {{lang 'products.reviews.link_to_review' total=product.num_reviews}}
+                                        </a>
+                                    {{else}}
+                                        {{lang 'products.reviews.link_to_review' total=product.num_reviews}}
+                                    {{/if}}
+                                </span>
+                                {{/if}}
+                                {{#if settings.show_product_reviews}}
+                                <span class="productView-reviewLink">
+                                    <a href="{{product.url}}{{#if is_ajax}}#writeReview{{/if}}"
+                                       {{#unless is_ajax }}data-reveal-id="modal-review-form"{{/unless}}>
+                                       {{lang 'products.reviews.new'}}
+                                    </a>
+                                </span>
+                                {{> components/products/modals/writeReview}}
+                                {{/if}}
+                            </div>
 
                         </div>
                     </div>

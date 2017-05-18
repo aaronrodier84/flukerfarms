@@ -42,6 +42,13 @@ export default class Product extends PageManager {
 
         $('body').on('click', '[data-reveal-id="modal-review-form"]', () => {
             validator = review.registerValidation();
+            $('#modal-review-form').fadeIn(500);
+            $( window ).scrollTop( 0 );
+            return false;
+        });
+
+        $('#modal-review-form').on('click', '.modal-close', (e) => {
+            $('#modal-review-form').fadeOut(500);
         });
 
         $reviewForm.on('submit', () => {
@@ -51,6 +58,19 @@ export default class Product extends PageManager {
             }
 
             return false;
+        });
+
+        let ratingValue = parseInt($('#ratingValue').val());
+
+        $('.productView-rating .rating-toggle').each(function(){
+           if(ratingValue > 1){
+               $(this).removeClass('icon-star-half-o').addClass('icon-star').removeClass('icon-star-o');
+           }else if(ratingValue > 0){
+               $(this).addClass('icon-star-half-o').removeClass('icon-star').removeClass('icon-star-o');
+           }else{
+               $(this).removeClass('icon-star-half-o').removeClass('icon-star').addClass('icon-star-o');
+           }
+           ratingValue = ratingValue - 1
         });
 
         next();
