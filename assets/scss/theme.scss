@@ -7776,3 +7776,43 @@ a.external-store-link {
   }
 }
 
+.account-content{
+  .account-list{
+    margin-left: 0;
+    .account-listItem{
+      padding-bottom: 10px;
+      padding-top: 10px;
+      border-bottom: 1px solid lightgray;
+      &:first-child{
+        border-top: 1px solid lightgray;
+      }
+      list-style: none;
+      .account-product{
+        .account-product-figure{
+          float: left;
+          margin-right: 10px;
+          img{
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  .account-product-body{
+    float: left;
+    .account-product-details{
+      .account-product-detail{
+        .account-product-detail-heading{
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.clearfix{
+  clear: both;
+}
+
+

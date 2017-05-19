@@ -1,4 +1,4 @@
-<h3 class="account-heading">{{lang 'account.orders.heading' }}</h3>
+<!--<h3 class="account-heading">{{lang 'account.orders.heading' }}</h3>-->
 
 <ul class="account-list">
     {{#each orders}}
@@ -15,6 +15,9 @@
                 {{/if}}
             </div>
             <div class="account-product-body">
+                <h5 class="account-product-title">
+                    <a href="{{this.details_url}}">{{lang 'account.orders.list.order_number' number=this.id}}</a>
+                </h5>
                 <div class="account-orderStatus">
                     <h6 class="account-orderStatus-label">{{this.status}}</h6>
                     {{#if ../settings.returns_enabled}}
@@ -26,9 +29,6 @@
                     {{/if}}
                 </div>
 
-                <h5 class="account-product-title">
-                    <a href="{{this.details_url}}">{{lang 'account.orders.list.order_number' number=this.id}}</a>
-                </h5>
                 <p class="account-product-description">{{lang 'account.orders.list.product_details' num_products=this.items.length cost=this.total.formatted}}</p>
 
                 <div class="account-product-details">
@@ -43,6 +43,7 @@
                 </div>
             </div>
         </div>
+        <div class="clearfix"></div>
     </li>
     {{/each}}
 </ul>
