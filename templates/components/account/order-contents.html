@@ -1,4 +1,4 @@
-<h3 class="account-heading">{{lang 'account.orders.details.order_contents'}}</h3>
+<!--<h3 class="account-heading">{{lang 'account.orders.details.order_contents'}}</h3>-->
 
 <ul class="account-list">
     {{#each order.items}}
@@ -11,14 +11,14 @@
         {{/if}}
     <li class="account-listItem">
         <div class="account-product account-product--alignMiddle">
-            <div class="account-product-checkItem">
-                {{#if show_reorder}}
-                    <input class="form-checkbox" type="checkbox" id="account-product-id-{{order_product_id}}" value="{{order_product_id}}">
-                    <label for="account-product-id-{{order_product_id}}" class="form-label">
-                        <span class="is-srOnly">Checkbox {{order_product_id}} label</span>
-                    </label>
-                {{/if}}
-            </div>
+            <!--<div class="account-product-checkItem">-->
+                <!--{{#if show_reorder}}-->
+                    <!--<input class="form-checkbox" type="checkbox" id="account-product-id-{{order_product_id}}" value="{{order_product_id}}">-->
+                    <!--<label for="account-product-id-{{order_product_id}}" class="form-label">-->
+                        <!--<span class="is-srOnly">Checkbox {{order_product_id}} label</span>-->
+                    <!--</label>-->
+                <!--{{/if}}-->
+            <!--</div>-->
             <figure class="account-product-figure">
                 {{#if type '===' 'giftcertificate'}}
                     <img src="{{cdn ../../theme_settings.default_image_gift_certificate}}" alt="Gift Certificate" title="Gift Certificate">
@@ -83,6 +83,7 @@
                     <p>{{{reorder_message}}}</p>
                 {{/if}}
             </div>
+            <div class="clearfix"></div>
         </div>
     </li>
     {{/each}}

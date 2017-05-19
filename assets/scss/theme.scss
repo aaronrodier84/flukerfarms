@@ -7777,6 +7777,10 @@ a.external-store-link {
 }
 
 .account-content{
+  &.account-content--fixedSmall{
+    width: calc(100% - 250px);
+    float: left;
+  }
   .account-list{
     margin-left: 0;
     .account-listItem{
@@ -7799,14 +7803,33 @@ a.external-store-link {
     }
   }
 
+  .account-orderTotal{
+    float: right;
+  }
+
   .account-product-body{
     float: left;
+    width: calc(100% - 210px);
     .account-product-details{
       .account-product-detail{
         .account-product-detail-heading{
           display: inline-block;
         }
       }
+    }
+  }
+}
+
+.account-sidebar{
+  width: 240px;
+  margin-left: 10px;
+  float: left;
+  border-left: 1px solid lightgray;
+  padding-left: 10px;
+  ul{
+    margin-left: 0;
+    li{
+      list-style: none;
     }
   }
 }
