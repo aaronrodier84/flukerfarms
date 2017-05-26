@@ -147,7 +147,7 @@
                             {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
                                 <div class="form-action">
                                     <input id="form-action-addToCart" data-wait-message="{{lang 'products.adding_to_cart'}}" class="btn btn-green add-to-cart phone-input-group" type="submit"
-                                           value="{{#if product.pre_order}}{{lang 'products.pre_order'}}{{else}}{{lang 'products.add_to_cart'}}{{/if}}">
+                                           value="{{#if product.pre_order}}{{lang 'products.pre_order'}}{{else}}{{lang 'products.add_to_cart'}}{{/if}}" onclick="return checkRecurringOrder();">
                                     <a href="{{urls.cart}}" class="btn btn-blue view-cart-button phone-input-group"><i class="icon icon-shopping-cart"></i>View Cart</a>
                                 </div>
                                 {{{snippet 'product_addtocart'}}}
@@ -194,3 +194,19 @@
     <div class="modal-content"></div>
     <div class="loadingOverlay"></div>
 </div>
+
+<script>
+    var recurringOptions = ['Weekly Recurring', 'Bi-Weekly Recurring', 'Monthly Recurring'];
+    function checkRecurringOrder(){
+        var options = document.getElementsByTagName('option');
+        if (options){
+            for(var i=0; i<options.length; i++){
+                if (options[i].selected && recurringOptions.indexOf(options[i].textContent.trim()) != -1){
+                    console.log('recurring order');
+                    alert('When placing an order for a recurring product, only one item can be ordered at a time. To complete checkout, please remove all items except your recurring item. If you wish to order more than 1 item for a recurring order, please call 800-343-7035. Thank you');
+                    break;
+                }
+            };
+        };
+    };
+</script>
