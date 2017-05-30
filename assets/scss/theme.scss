@@ -7838,4 +7838,60 @@ a.external-store-link {
   clear: both;
 }
 
+.shipping-estimator{
+  padding: 5px;
+  border: 1px solid lightgray;
+  &.u-hiddenVisually{
+    display: none;
+  }
+  select.form-select{
+    width: 100%;
+  }
+
+  input.form-input{
+    width: 100%;
+  }
+
+  .shipping-estimate-submit{
+    padding: 2px 10px;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .estimator-form-input{
+    margin-left: 0;
+  }
+
+  .estimator-form-label-text{
+    font-size: 11px;
+  }
+
+  .estimator-form-input.estimator-form-input--price{
+    text-align: center;
+  }
+
+  .shipping-quotes{
+    .select-shipping-quote{
+      padding: 5px 10px;
+      width: 100%;
+      margin-top: 5px;
+      background: #709633;
+      border: none;
+      color: white;
+      font-size: 15px;
+      border-radius: 5px;
+    }
+  }
+
+}
+
+.shipping{
+  .cart-total-value{
+    float: right;
+    a.shipping-estimate-value{
+      padding: 0;
+    }
+  }
+}
+
 
