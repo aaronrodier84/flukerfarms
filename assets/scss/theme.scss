@@ -7144,8 +7144,8 @@ a.btn-red {
     height: 59px;
   }
   .small-container {
-    width: 80%;
-    padding: 2em 3em;
+    width: 100%;
+    padding: 1em 1em;
   }
   .header-search {
     display: none;
@@ -7893,5 +7893,20 @@ a.external-store-link {
     }
   }
 }
+
+iframe{
+  width: 560px;
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+  }
+}
+
+table.table-container{
+  @media only screen and (max-width: 767px) {
+    width: 100% !important;
+  }
+}
+
+
 
 
