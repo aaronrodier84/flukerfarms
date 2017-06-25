@@ -33,12 +33,15 @@
 
                         <div class="productView-rating"{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}>
                             <div id="star-ratings">
-                                <input type="hidden" id="ratingValue" value="{{product.rating}}">
-                                <i class="icon rating-toggle icon-star"></i>
-                                <i class="icon rating-toggle icon-star"></i>
-                                <i class="icon rating-toggle icon-star"></i>
-                                <i class="icon rating-toggle icon-star-half-o"></i>
-                                <i class="icon rating-toggle icon-star-o"></i>
+                                <input type="hidden" id="ratingValue" class="rating-value-input" value="{{product.rating}}">
+                                <span class="star-ratings">
+                                    <i class="icon rating-toggle icon-star"></i>
+                                    <i class="icon rating-toggle icon-star"></i>
+                                    <i class="icon rating-toggle icon-star"></i>
+                                    <i class="icon rating-toggle icon-star-half-o"></i>
+                                    <i class="icon rating-toggle icon-star-o"></i>
+                                </span>
+
                                 {{#if settings.show_product_rating}}
                                 <span class="productView-reviewLink">
                                     {{#if product.num_reviews '>' 0}}

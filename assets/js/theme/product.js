@@ -60,17 +60,21 @@ export default class Product extends PageManager {
             return false;
         });
 
-        let ratingValue = parseFloat($('#ratingValue').val(), 10);
+        $('.rating-value-input').each(function () {
+            let ratingValue = parseFloat($(this).val(), 10);
 
-        $('.productView-rating .rating-toggle').each(function () {
-            if (ratingValue >= 1) {
-                $(this).removeClass('icon-star-half-o').addClass('icon-star').removeClass('icon-star-o');
-            } else if (ratingValue > 0) {
-                $(this).addClass('icon-star-half-o').removeClass('icon-star').removeClass('icon-star-o');
-            } else {
-                $(this).removeClass('icon-star-half-o').removeClass('icon-star').addClass('icon-star-o');
-            }
-            ratingValue = ratingValue - 1;
+            $(this).next('.star-ratings').each(function () {
+                $('.rating-toggle', this).each(function () {
+                    if (ratingValue >= 1) {
+                        $(this).removeClass('icon-star-half-o').addClass('icon-star').removeClass('icon-star-o');
+                    } else if (ratingValue > 0) {
+                        $(this).addClass('icon-star-half-o').removeClass('icon-star').removeClass('icon-star-o');
+                    } else {
+                        $(this).removeClass('icon-star-half-o').removeClass('icon-star').addClass('icon-star-o');
+                    }
+                    ratingValue = ratingValue - 1;
+                });
+            });
         });
 
         next();
