@@ -16,10 +16,10 @@
             {{#each reviews.list}}
             <li class="productReview">
                 <article itemprop="review" itemscope itemtype="http://schema.org/Review">
-                    <header>
+                    <div>
                         <span class="productReview-rating rating--small" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
                             {{> components/products/ratings rating=rating}}
-                            <span class="productReview-ratingNumber" itemprop="ratingValue">{{ rating }}</span>
+                            <!--<span class="productReview-ratingNumber" itemprop="ratingValue">{{ rating }}</span>-->
                         </span>
                         <h5 itemprop="name" class="productReview-title">{{ title }}</h5>
                         {{#if name}}
@@ -32,7 +32,7 @@
                                 {{lang 'products.reviews.post_on_by' date=date name=(lang 'products.reviews.anonymous_poster')}}
                             </p>
                         {{/if}}
-                    </header>
+                    </div>
                     <p itemprop="reviewBody" class="productReview-body">{{nl2br text}}</p>
                 </article>
             </li>

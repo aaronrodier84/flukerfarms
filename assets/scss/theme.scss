@@ -7907,6 +7907,48 @@ table.table-container{
   }
 }
 
+.productReviews{
+  .toggle-title{
+    font-size: 1.25rem;
+  }
+  .toggleLink{
+    float: right;
+    .toggleLink-text--on{
+      display: none;
+    }
+    &.is-open{
+      .toggleLink-text--on{
+        display: block;
+      }
+      .toggleLink-text--off{
+        display: none;
+      }
+    }
+  }
+
+  .productReview-rating{
+    color: #709633;
+  }
+
+  .toggle-content{
+    display: none;
+    &.is-open{
+      display: block;
+    }
+
+    .productReviews-list{
+      list-style: none;
+      margin-left: 0;
+
+      .productReview-author{
+        font-style: italic;
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
 
 
 

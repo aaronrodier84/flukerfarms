@@ -43,6 +43,10 @@ product:
 
         </div>
 
+        {{#if settings.show_product_reviews}}
+            {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
+        {{/if}}
+
         <h2 class="underlined">Related Products</h2>
         <aside class="units-row">
             {{#each product.related_products}}
