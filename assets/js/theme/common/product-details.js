@@ -55,6 +55,17 @@ export default class Product {
         $productOptionsElement.show();
 
         previewModal = modalFactory('#previewModal')[0];
+        $('#previewModal').on('click', '.modal-close', () => {
+            $('#previewModal').fadeOut(500);
+            $('.modal-background').fadeOut(500);
+            $('body').removeClass('has-activeModal');
+        });
+
+        $('#previewModal').on('click', '[data-reveal-close=""]', () => {
+            $('#previewModal').fadeOut(500);
+            $('.modal-background').fadeOut(500);
+            $('body').removeClass('has-activeModal');
+        });
         productSingleton = this;
     }
 
@@ -218,6 +229,9 @@ export default class Product {
             }
 
             // Open preview modal and update content
+            $('#previewModal').fadeIn(500);
+            $('.modal-background').fadeIn(500);
+            $('body').addClass('has-activeModal');
             previewModal.open();
 
             this.updateCartContent(previewModal, response.data.cart_item.hash);
